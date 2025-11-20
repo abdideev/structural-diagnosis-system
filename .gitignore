@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Reglas de Modelos:
+# 1. Ignorar TODO lo que esté dentro de models
+models/*
+
+# 2. ¡EXCEPCIÓN! NO ignorar el archivo .gitkeep
+!models/.gitkeep
