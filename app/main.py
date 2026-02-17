@@ -62,7 +62,7 @@ class FisuraApp:
                 ft.Column([
                     ft.Icon(ft.Icons.ERROR, color="red", size=50),
                     ft.Text(f"Error crítico cargando modelos:\n{e}", color="red", size=16)
-                ], alignment="center"),
+                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
                 alignment=ft.Alignment(0,0), expand=True
             ))
             self.page.update()
@@ -97,7 +97,7 @@ class FisuraApp:
                     style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10))
                 )
             ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             expand=True,
             padding=20
         )

@@ -124,7 +124,7 @@ def crear_result_view(page: ft.Page, resultados, on_nueva_analisis):
             ]),
             ft.Divider(),
             
-            ft.Row([card_hibrido, ft.Container(width=20), card_nlp], alignment="start"),
+            ft.Row([card_hibrido, ft.Container(width=20), card_nlp], alignment=ft.MainAxisAlignment.START),
             
             ft.Container(height=20),
             card_recs,

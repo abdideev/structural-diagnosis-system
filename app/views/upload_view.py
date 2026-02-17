@@ -141,7 +141,7 @@ def crear_upload_view(page: ft.Page, on_analizar, on_back):
                                 btn_upload,
                                 ft.Text("Sin imagen", ref=imagen_path_ref, size=10, italic=True, color="grey"),
                                 img_preview
-                            ], horizontal_alignment="center"),
+                            ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
                             padding=20, border=ft.border.all(1, "#37474F"), border_radius=15,
                             alignment=ft.Alignment(0,0)
                         )
