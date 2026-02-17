@@ -143,7 +143,7 @@ def crear_upload_view(page: ft.Page, on_analizar, on_back):
                                 img_preview
                             ], horizontal_alignment="center"),
                             padding=20, border=ft.border.all(1, "#37474F"), border_radius=15,
-                            alignment=ft.alignment.center
+                            alignment=ft.Alignment(0,0)
                         )
                     ])
                 ),
@@ -174,6 +174,6 @@ def crear_upload_view(page: ft.Page, on_analizar, on_back):
             ], expand=True, alignment=ft.MainAxisAlignment.START),
             
             ft.Divider(color="grey"),
-            ft.Container(content=btn_analizar, alignment=ft.alignment.center, padding=10)
+            ft.Container(content=btn_analizar, alignment=ft.Alignment(0,0), padding=10)
         ])
     )

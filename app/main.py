@@ -2,6 +2,9 @@ import flet as ft
 import sys
 import os
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Oculta INFO y WARNINGS de TF
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # Desactiva el aviso de oneDNN
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from views.upload_view import crear_upload_view
@@ -46,7 +49,7 @@ class FisuraApp:
             alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
-        self.page.add(ft.Container(loading, alignment=ft.alignment.center, expand=True))
+        self.page.add(ft.Container(loading, alignment=ft.Alignment(0,0), expand=True))
         self.page.update()
 
         try:
@@ -60,7 +63,7 @@ class FisuraApp:
                     ft.Icon(ft.Icons.ERROR, color="red", size=50),
                     ft.Text(f"Error crítico cargando modelos:\n{e}", color="red", size=16)
                 ], alignment="center"),
-                alignment=ft.alignment.center, expand=True
+                alignment=ft.Alignment(0,0), expand=True
             ))
             self.page.update()
 
