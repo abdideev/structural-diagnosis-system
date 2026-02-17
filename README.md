@@ -1,40 +1,40 @@
-# Sistema Experto de Diagnóstico de Fisuras Estructurales 🏗️🤖
+# Sistema Experto de Diagnóstico de Fisuras Estructurales 🤖
 
 ---
 
-## Goal 🎯
+## Objetivo 🎯
 
-The goal of this project was to develop a **Hybrid Artificial Intelligence System** capable of classifying and diagnosing pathologies in concrete structures (beams and columns). Unlike traditional systems, this software uses a **joint decision architecture** that combines visual analysis, physical data, and textual descriptions to provide comprehensive structural assessments.
-
----
-
-## Features ✨
-
-This expert system includes the following capabilities:
-
-- **Visual Analysis**: Convolutional Neural Network (CNN) for crack pattern recognition
-- **Expert Decision System**: ID3 Decision Tree combining visual probabilities with physical measurements
-- **Natural Language Processing**: Fine-tuned DistilBERT model analyzing textual descriptions
-- **Hybrid Prediction**: Three-model orchestration providing multi-perspective diagnostics
-- **Interactive GUI**: Desktop application built with Flet for seamless user interaction
-- **Comprehensive Output**: Technical diagnosis with confidence scores and contextual insights
+El objetivo de este proyecto fue desarrollar un **Sistema Híbrido de Inteligencia Artificial** capaz de clasificar y diagnosticar patologías en estructuras de concreto (vigas y columnas). A diferencia de los sistemas tradicionales, este software utiliza una **arquitectura de decisión conjunta** que combina análisis visual, datos físicos y descripciones textuales para proporcionar evaluaciones estructurales integrales.
 
 ---
 
-## System Architecture 🧠
+## Características ✨
 
-The system processes information through two parallel flows orchestrated by the prediction core (`predictor.py`):
+Este sistema experto incluye las siguientes capacidades:
 
-### 1. Hybrid Flow (Visual + Structural)
-* **Step A (CNN):** A Convolutional Neural Network analyzes the crack image and extracts probabilities (e.g., *85% Corrosion*)
-* **Step B (ID3):** A Decision Tree (ID3 Algorithm) takes these probabilities along with physical data (crack width, location) to issue the final technical diagnosis
-
-### 2. Independent Flow (NLP)
-* **Step C (LLM):** A language model (Fine-Tuned DistilBERT) analyzes the textual description provided by the user to offer a "second opinion" based on narrative context
+- **Análisis Visual**: Red Neuronal Convolucional (CNN) para reconocimiento de patrones de fisuras
+- **Sistema de Decisión Experto**: Árbol de Decisión ID3 que combina probabilidades visuales con mediciones físicas
+- **Procesamiento de Lenguaje Natural**: Modelo DistilBERT afinado que analiza descripciones textuales
+- **Predicción Híbrida**: Orquestación de tres modelos proporcionando diagnósticos multi-perspectiva
+- **Interfaz Gráfica Interactiva**: Aplicación de escritorio construida con Flet para interacción fluida
+- **Salida Integral**: Diagnóstico técnico con puntuaciones de confianza y análisis contextual
 
 ---
 
-## Tech Stack 💻
+## Arquitectura del Sistema 🧠
+
+El sistema procesa la información a través de dos flujos paralelos orquestados por el núcleo de predicción (`predictor.py`):
+
+### 1. Flujo Híbrido (Visual + Estructural)
+* **Paso A (CNN):** Una Red Neuronal Convolucional analiza la imagen de la fisura y extrae probabilidades (ej. *85% Corrosión*)
+* **Paso B (ID3):** Un Árbol de Decisión (Algoritmo ID3) toma estas probabilidades junto con datos físicos (ancho de fisura, ubicación) para emitir el diagnóstico técnico final
+
+### 2. Flujo Independiente (NLP)
+* **Paso C (LLM):** Un modelo de lenguaje (DistilBERT Afinado) analiza la descripción textual proporcionada por el usuario para ofrecer una "segunda opinión" basada en el contexto narrativo
+
+---
+
+## Stack Tecnológico 💻
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Flet](https://img.shields.io/badge/Flet-UI-purple)
@@ -43,120 +43,102 @@ The system processes information through two parallel flows orchestrated by the 
 ![PyTorch](https://img.shields.io/badge/PyTorch-NLP-red)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
 
-**Technologies Used:**
-- **Language:** Python 3.10+
-- **GUI Framework:** Flet (Flutter for Python)
+**Tecnologías Utilizadas:**
+- **Lenguaje:** Python 3.10+
+- **Framework GUI:** Flet (Flutter para Python)
 - **Machine Learning:** TensorFlow (Keras), Scikit-Learn
 - **NLP:** HuggingFace Transformers, PyTorch
-- **Data Processing:** Pandas, NumPy
+- **Procesamiento de Datos:** Pandas, NumPy
 
 ---
 
-## Project Structure 📂
+## Estructura del Proyecto 📂
 ```text
 ├── app/
-│   ├── main.py              # 🚀 ENTRY POINT: Runs the graphical interface
+│   ├── main.py              # 🚀 PUNTO DE ENTRADA: Ejecuta la interfaz gráfica
 │   ├── services/
-│   │   └── predictor.py     # 🧠 LOGIC ENGINE: Loads 3 models and orchestrates prediction
-│   └── views/               # UI components (Upload, Results)
-├── data/                    # Datasets (Images and CSVs)
-├── models/                  # Folder for trained models (.h5, .pkl)
-├── training/                # Training scripts (Run once)
-│   ├── train_cnn.py         # Trains Computer Vision model
-│   ├── train_expert.py      # Trains Decision Tree
-│   └── train_finetuning.py  # Trains Language Model
-└── requirements.txt         # Project dependencies
+│   │   └── predictor.py     # 🧠 MOTOR LÓGICO: Carga los 3 modelos y orquesta la predicción
+│   └── views/               # Componentes de la interfaz (Carga, Resultados)
+├── data/                    # Conjuntos de datos (Imágenes y CSVs)
+├── models/                  # Carpeta para modelos entrenados (.h5, .pkl)
+├── training/                # Scripts de entrenamiento (Ejecutar una vez)
+│   ├── train_cnn.py         # Entrena el modelo de Visión Artificial
+│   ├── train_expert.py      # Entrena el Árbol de Decisión
+│   └── train_finetuning.py  # Entrena el Modelo de Lenguaje
+└── requirements.txt         # Dependencias del proyecto
 ```
 
 ---
 
-## Installation 🚀
+## Instalación 🚀
 
-Follow these steps to deploy the project in your local environment.
+Sigue estos pasos para desplegar el proyecto en tu entorno local.
 
-### 1. Clone and Configure
+### 1. Clonar y Configurar
 ```bash
 git clone https://github.com/paulomantilla04/structural-diagnosis-system.git
 cd structural-diagnosis-system
 
-# Create virtual environment (Recommended)
+# Crear entorno virtual (Recomendado)
 python -m venv .venv
 
-# Activate on Windows:
+# Activar en Windows:
 .venv\Scripts\activate
 
-# Activate on Mac/Linux:
+# Activar en Mac/Linux:
 source .venv/bin/activate
 ```
 
-### 2. Install Dependencies
+### 2. Instalar Dependencias
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Model Generation (CRITICAL) ⚠️
+### 3. Generación de Modelos (CRÍTICO) ⚠️
 
-This repository does not include the heavy model files. You must generate them on your machine by running the training scripts in the following strict order:
+Este repositorio no incluye los archivos pesados de los modelos. Debes generarlos en tu máquina ejecutando los scripts de entrenamiento en el siguiente orden estricto:
 
-#### A. Train the CNN (Vision):
+#### A. Entrenar la CNN (Visión):
 ```bash
 python training/train_cnn.py
 ```
-**Generates:** `models/cnn_model.h5`
+**Genera:** `models/cnn_model.h5`
 
-#### B. Train the Expert System (ID3):
+#### B. Entrenar el Sistema Experto (ID3):
 ```bash
 python training/train_expert.py
 ```
-**Generates:** `models/id3_classifier.pkl`
+**Genera:** `models/id3_classifier.pkl`
 
-#### C. Train the NLP (Text):
-*(Requires internet connection to download DistilBERT)*
+#### C. Entrenar el NLP (Texto):
+*(Requiere conexión a internet para descargar DistilBERT)*
 ```bash
 python training/train_finetuning.py
 ```
-**Generates:** `models/nlp_finetuned/`
+**Genera:** `models/nlp_finetuned/`
 
 ---
 
-## Usage 💡
+## Uso 💡
 
-Once the models are generated, start the system by running:
+Una vez generados los modelos, inicia el sistema ejecutando:
 ```bash
 python app/main.py
 ```
 
-1. **Loading:** The system will load all 3 models into memory (may take a few seconds)
-2. **Interface:** A desktop window will open
-3. **Diagnosis:** Upload an image, complete the physical data fields, and write a description. Press "Analyze" to see the joint result
+1. **Carga:** El sistema cargará los 3 modelos en memoria (puede tardar unos segundos)
+2. **Interfaz:** Se abrirá una ventana de escritorio
+3. **Diagnóstico:** Sube una imagen, completa los campos de datos físicos y escribe una descripción. Presiona "Analizar" para ver el resultado conjunto
 
 ---
 
-## Requirements 📝
+## Requisitos 📝
 
-- Python 3.10 or higher
-- CUDA-compatible GPU (recommended for faster CNN inference)
-- Minimum 8GB RAM
-- Internet connection (for initial model downloads)
-
----
-
-## Project URL 🔗
-
-If you're interested in exploring this challenge or contributing, you can visit the repository:
-
-**GitHub Repository:** [https://github.com/paulomantilla04/structural-diagnosis-system](https://github.com/paulomantilla04/structural-diagnosis-system)
+- Python 3.10 o superior
+- GPU compatible con CUDA (recomendado para inferencia CNN más rápida)
+- Mínimo 8GB de RAM
+- Conexión a internet (para descargas iniciales de modelos)
 
 ---
 
-## Future Enhancements 🔮
-
-- Integration with real-time structural monitoring systems
-- Mobile application version
-- Extended pathology database
-- Multi-language support
-- Cloud-based deployment option
-
----
-
-**Developed with ❤️ by Abdiel 🕷️**
+**Desarrollado con ❤️ por Abdiel 🕷️**
