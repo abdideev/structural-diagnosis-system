@@ -76,7 +76,7 @@ Sigue estos pasos para desplegar el proyecto en tu entorno local.
 
 ### 1. Clonar y Configurar
 ```bash
-git clone https://github.com/paulomantilla04/structural-diagnosis-system.git
+git clone https://github.com/abdideev/structural-diagnosis-system.git
 cd structural-diagnosis-system
 
 # Crear entorno virtual (Recomendado)
