@@ -7,10 +7,14 @@ from sklearn.metrics import classification_report, accuracy_score
 import matplotlib.pyplot as plt
 
 # --- CONFIGURACIÓN ---
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
+
 # Ruta absoluta para guardar modelos
-BASE_MODEL_PATH = r"C:\Users\Abdiel\Desktop\prueba_fisuras\models"
+BASE_MODEL_PATH = os.path.join(PROJECT_ROOT, 'models')
 # Ruta relativa al dataset procesado (ajusta si tu csv está en otro lado)
-CSV_PATH = r"C:\Users\Abdiel\Desktop\prueba_fisuras\data\datasets\diagnosticos_improved.csv"
+CSV_PATH = os.path.join(PROJECT_ROOT, 'data', 'datasets', 'diagnosticos_improved.csv')
 
 def train_expert_model():
     print("="*60)

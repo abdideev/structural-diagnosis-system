@@ -13,3 +13,5 @@ models/*
 
 # 2. ¡EXCEPCIÓN! NO ignorar el archivo .gitkeep
 !models/.gitkeep
+
+logs/

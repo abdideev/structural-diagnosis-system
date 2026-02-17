@@ -6,11 +6,15 @@ from tensorflow.keras.preprocessing import image_dataset_from_directory
 import matplotlib.pyplot as plt
 
 # --- CONFIGURACIÓN DE RUTAS ---
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
+
 # Usamos 'r' antes de las comillas para que Python interprete las barras invertidas correctamente
-DATASET_PATH = r"C:\Users\Abdiel\Desktop\prueba_fisuras\data\images"
+DATASET_PATH = os.path.join(PROJECT_ROOT, 'data', 'images')
 
 # Ruta base donde se guardarán los resultados
-BASE_OUTPUT_PATH = r"C:\Users\Abdiel\Desktop\prueba_fisuras\models"
+BASE_OUTPUT_PATH = os.path.join(PROJECT_ROOT, 'models')
 
 # Nombre específico del archivo del modelo
 MODEL_FILENAME = "cnn_model.h5"

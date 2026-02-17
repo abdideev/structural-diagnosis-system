@@ -11,11 +11,13 @@ from transformers import (
 )
 
 # --- CONFIGURACIÓN ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
 # Ruta absoluta base
-BASE_OUTPUT_DIR = r"C:\Users\Abdiel\Desktop\prueba_fisuras\models"
+BASE_OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'models')
 MODEL_SAVE_PATH = os.path.join(BASE_OUTPUT_DIR, "nlp_finetuned")
 # Ruta relativa al dataset (ajusta si es necesario)
-DATASET_PATH = r"C:\Users\Abdiel\Desktop\prueba_fisuras\data\datasets\fisuras_dataset.csv" 
+DATASET_PATH = os.path.join(PROJECT_ROOT, 'data', 'datasets', 'fisuras_dataset.csv') 
 
 def train_nlp_model():
     print("="*60)

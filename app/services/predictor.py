@@ -10,12 +10,14 @@ import torch.nn.functional as F
 class FissurePredictor:
     def __init__(self):
         # RUTA BASE ABSOLUTA (Ajustada a tu carpeta)
-        self.base_path = r"C:\Users\Abdiel\Desktop\prueba_fisuras\models"
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        self.root_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
+        self.models_dir = os.path.join(self.root_dir, 'models')
         
-        print("--- CARGANDO MODELOS ---")
+        print(f"--- CARGANDO MODELOS DESDE: {self.models_dir} ---")
         
         # 1. Cargar CNN
-        cnn_path = os.path.join(self.base_path, 'cnn_model.h5')
+        cnn_path = os.path.join(self.models_dir, 'cnn_model.h5')
         if os.path.exists(cnn_path):
             self.cnn_model = tf.keras.models.load_model(cnn_path)
             print(f"✅ CNN cargada: {cnn_path}")
@@ -23,18 +25,18 @@ class FissurePredictor:
             raise FileNotFoundError(f"❌ No se encontró CNN en: {cnn_path}")
 
         # 2. Cargar ID3 y sus Columnas (Híbrido)
-        id3_path = os.path.join(self.base_path, 'id3_classifier.pkl')
-        cols_path = os.path.join(self.base_path, 'id3_columns.pkl')
+        id3_path = os.path.join(self.models_dir, 'id3_classifier.pkl')
+        cols_path = os.path.join(self.models_dir, 'id3_columns.pkl')
         
         if os.path.exists(id3_path) and os.path.exists(cols_path):
             self.id3_model = joblib.load(id3_path)
             self.id3_columns = joblib.load(cols_path)
             print(f"✅ Modelo ID3 cargado: {id3_path}")
         else:
-            raise FileNotFoundError(f"❌ Faltan archivos del ID3 en: {self.base_path}")
+            raise FileNotFoundError(f"❌ Faltan archivos del ID3 en: {self.models_dir}")
 
         # 3. Cargar Fine-Tuning (NLP) - Opcional para que no rompa si falta
-        nlp_path = os.path.join(self.base_path, 'nlp_finetuned')
+        nlp_path = os.path.join(self.models_dir, 'nlp_finetuned')
         try:
             self.nlp_tokenizer = AutoTokenizer.from_pretrained(nlp_path)
             self.nlp_model = AutoModelForSequenceClassification.from_pretrained(nlp_path)
