@@ -132,13 +132,4 @@ python app/main.py
 
 ---
 
-## Requisitos 📝
-
-- Python 3.10 o superior
-- GPU compatible con CUDA (recomendado para inferencia CNN más rápida)
-- Mínimo 8GB de RAM
-- Conexión a internet (para descargas iniciales de modelos)
-
----
-
 **Desarrollado con ❤️ por Abdiel 🕷️**
