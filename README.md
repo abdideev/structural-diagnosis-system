@@ -132,4 +132,4 @@ python app/main.py
 
 ---
 
-**Desarrollado con ❤️ por Abdiel**
+**Desarrollado con ❤️ por Abdiel 🕷️**
